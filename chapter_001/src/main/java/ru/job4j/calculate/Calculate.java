@@ -1,10 +1,10 @@
 package ru.job4j.Calculate;
 
 /**
-* Class Calculate для вывода сообщения на экран.
+* Конструктор, вывод строки на консоль.
 * @author Astaafiev Ilya.
 * @since 29.05.2018.
-* @version 1
+* Main.
 * @param args - args
 */
 
