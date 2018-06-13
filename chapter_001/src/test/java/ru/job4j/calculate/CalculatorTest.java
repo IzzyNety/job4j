@@ -1,6 +1,7 @@
-package ru.job4j.calculator;
+package ru.job4j.calculate;
 
 import org.junit.Test;
+import ru.job4j.calculator.Calculator;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -13,5 +14,17 @@ public class CalculatorTest {
         double result = calc.getResult();
         double expected = 2D;
         assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenSubtractOneMinusOneThenTwo() {
+    }
+
+    @Test
+    public void whenDivOneYmnogitOneThenTwo() {
+     }
+
+    @Test
+    public void whenMultipleOneDelOneThenTwo() {
     }
 }
