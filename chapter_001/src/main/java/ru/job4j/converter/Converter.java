@@ -7,44 +7,36 @@ package ru.job4j.converter;
 public class Converter {
     /**
      * Конвертируем рубли в евро.
-     * @param Rub рубли, Euro евро.
+     * @param value рубли.
      * @return Евро.
      */
-    public int rubleToEuro(int Rub, int Euro) {
-       Rub = 70;
-        Euro = Rub / 70;
-        return Euro;
+    public int rubleToEuro(int value) {
+       return value / 70;
     }
 
     /**
      * Конвертируем рубли в доллары.
-     * @param Rub рубли, Dollar доллар.
+     * @param value рубли.
      * @return Доллары
      */
-    public int rubleToDollar(int Rub, int Dollar) {
-        Rub = 60;
-        Dollar = Rub / 60;
-        return Dollar;
+    public int rubleToDollar(int value) {
+       return value / 60;
     }
     /**
      * Конвертируем рубли в евро.
-     * @param Rub рубли, Euro евро.
-     * @return Евро.
+     * @param value евро.
+     * @return рубли.
      */
-    public int EuroToRuble(int Rub, int Euro) {
-        Euro = 1;
-        Rub = Euro * 70;
-        return Rub;
+    public int EuroToRuble(int value) {
+       return value * 70;
     }
 
     /**
      * Конвертируем рубли в доллары.
-     * @param Rub рубли, Dollar доллар.
+     * @param value рубли.
      * @return Доллары
      */
-    public int DollarToRuble(int Rub, int Dollar) {
-        Dollar = 60;
-        Rub = Dollar / 60;
-        return Rub;
+    public int DollarToRuble(int value) {
+       return value * 60;
     }
 }
