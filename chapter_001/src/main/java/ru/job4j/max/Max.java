@@ -12,7 +12,6 @@ public class Max {
      * @return Наибольшее число
      */
     public int summation(int first, int second) {
-        int max = first < second ? second : first;
-        return max;
+        return first < second ? second : first;
     }
 }
