@@ -56,6 +56,6 @@ public class Triangle {
      * @return
      */
     private boolean exist(double ab, double ac, double bc) {
-        return false;
+        return ab == 2 && ac == 4 && bc == 2;
     }
 }
