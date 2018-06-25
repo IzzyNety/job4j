@@ -40,9 +40,7 @@ public class Triangle {
        double bc = this.b.distanceTo(this.c);
        double p = this.period(ab, ac, bc);
        if (this.exist(ab, ac, bc)) {
-           return (ab + ac + bc) / 2;
-       } else {
-           rsl = Math.sqrt(p * (p - ab) * (p - ac) * (p - bc));
+           return  Math.sqrt(p * (p - ab) * (p - ac) * (p - bc));
        }
        return rsl;
    }
@@ -51,11 +49,11 @@ public class Triangle {
      * Метод проверяет можно ли построить треугольник с такими длинными сторонами.
      *
      * @param ab Длина от точки a b.
-     * @param ac Длина от точки ac.
+     * @param ac Длина от точки a c.
      * @param bc Длина от точки b c.
      * @return
      */
     private boolean exist(double ab, double ac, double bc) {
-        return ab == 2 && ac == 4 && bc == 2;
+        return ((ab + ac) > bc && (ab + bc) > ac && (ac + bc) > ab);
     }
 }
