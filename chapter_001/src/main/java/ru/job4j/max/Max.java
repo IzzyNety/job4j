@@ -22,9 +22,7 @@ public class Max {
      * @param third - третье число.
      * @return возвращает параметр.
      */
-    public int max(int first, int second, int third){
-        int maximum = this.summation(first, second);
-        return this.summation(maximum, third);
-
+    public int max(int first, int second, int third) {
+        return this.summation(this.summation(first, second), third);
     }
 }
