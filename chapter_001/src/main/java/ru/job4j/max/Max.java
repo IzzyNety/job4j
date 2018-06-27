@@ -14,4 +14,17 @@ public class Max {
     public int summation(int first, int second) {
         return first < second ? second : first;
     }
+
+    /**
+     * максимум из трех чисел.
+     * @param first - первое число.
+     * @param second - второе число.
+     * @param third - третье число.
+     * @return возвращает параметр.
+     */
+    public int max(int first, int second, int third){
+        int maximum = this.summation(first, second);
+        return this.summation(maximum, third);
+
+    }
 }
