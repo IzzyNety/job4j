@@ -5,15 +5,11 @@ package ru.job4j.array;
  */
 public class Check {
     public boolean mono(boolean[] data) {
-            boolean result = false;
-            for (int i = 0; i < data.length; i++) {
-                if (data[i] == false) {
-                    return false;
-                } else {
-                    return true;
-                }
-
+        for (int i = 0; i < data.length; i++) {
+            if (data[0] != data[i]) {
+                return false;
             }
-            return result;
+        }
+        return true;
     }
 }
