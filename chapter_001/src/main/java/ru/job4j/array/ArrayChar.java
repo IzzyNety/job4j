@@ -19,8 +19,7 @@ public class ArrayChar {
     public boolean starWith(String prefix) {
         boolean result = true;
         char[] value = prefix.toCharArray();
-        // проверить, что массив data имеет первые элементы одинаковые с value
-        for (int i = 0; i < value.length; i++) {
+                for (int i = 0; i < value.length; i++) {
             if (data[i] != value[i]) {
                 result = false;
                 break;
