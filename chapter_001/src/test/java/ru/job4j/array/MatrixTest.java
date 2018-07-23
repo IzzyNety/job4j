@@ -6,7 +6,7 @@ import static org.junit.Assert.assertThat;
 
 public class MatrixTest {
     @Test
-    public void when2on2(){
+    public void when2on2() {
         Matrix matrix = new Matrix();
         int[][] table = matrix.multiple(2);
         int[][] expect = {
