@@ -18,9 +18,9 @@ public class SortMassiveTest {
     public void whenSortArrayGood() {
         SortMassive sortMassive = new SortMassive();
         int[] input = new int[]{1, 2, 3, 4, 5, 6};
-        int[] result = sortMassive.isSort(input);
+        boolean result = sortMassive.isSort(input);
         int[] expect = new int[]{1, 2, 3, 4, 5, 6};
-        assertThat(result, is(expect));
+        assertThat(result, is(true));
     }
 
     /**
@@ -30,8 +30,8 @@ public class SortMassiveTest {
     public void whenSortArrayBad() {
         SortMassive sortMassive = new SortMassive();
         int[] input = new int[]{2, 5, 1, 6, 4, 3};
-        int[] result = sortMassive.isSort(input);
+        boolean result = sortMassive.isSort(input);
         int[] expect = new int[]{1, 2, 3, 4, 5, 6};
-        assertThat(result, is(expect));
+        assertThat(result, is(false));
     }
 }
