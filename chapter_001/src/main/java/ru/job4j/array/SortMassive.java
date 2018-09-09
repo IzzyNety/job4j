@@ -12,15 +12,14 @@ public class SortMassive {
      * @param array массив
      * @return  ответ.
      */
-    public boolean isSort(int[] array){
+    public boolean isSort(int[] array) {
         boolean result = true;
-        for (int i = 0; i < array.length; i++) {
-            if (array[0] != array[i]) {
-                return true;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[0] > array[i + 1]) {
+                result = false;
+                break;
             }
-            else {
-                return false;
-            }
+
         }
 
         return result;

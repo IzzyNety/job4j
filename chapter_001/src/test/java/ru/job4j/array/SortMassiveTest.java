@@ -19,7 +19,6 @@ public class SortMassiveTest {
         SortMassive sortMassive = new SortMassive();
         int[] input = new int[]{1, 2, 3, 4, 5, 6};
         boolean result = sortMassive.isSort(input);
-        int[] expect = new int[]{1, 2, 3, 4, 5, 6};
         assertThat(result, is(true));
     }
 
@@ -31,7 +30,6 @@ public class SortMassiveTest {
         SortMassive sortMassive = new SortMassive();
         int[] input = new int[]{2, 5, 1, 6, 4, 3};
         boolean result = sortMassive.isSort(input);
-        int[] expect = new int[]{1, 2, 3, 4, 5, 6};
         assertThat(result, is(false));
     }
 }
