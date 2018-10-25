@@ -77,13 +77,21 @@ public class Logic {
                     break;
                 }
             }
+            if (result) {
+                break;
+            }
+                result = true;
 
                 for (int j = 0; j < table.length; j++) {
-                if (table[j][i] != 1) {
+                    if (table[j][i] != 1) {
                     result = false;
                     break;
+                    }
                 }
-            }
+                if (result) {
+                    break;
+                }
+
         }
      return result;
     }
