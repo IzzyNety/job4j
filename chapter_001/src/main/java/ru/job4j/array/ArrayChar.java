@@ -13,13 +13,14 @@ public class ArrayChar {
 
     /**
      * Проверяет, что слова начинаются с префикса.
+     *
      * @param prefix префикс.
      * @return если слово начинается с префикса
      */
     public boolean starWith(String prefix) {
         boolean result = true;
         char[] value = prefix.toCharArray();
-                for (int i = 0; i < value.length; i++) {
+        for (int i = 0; i < value.length; i++) {
             if (data[i] != value[i]) {
                 result = false;
                 break;

@@ -8,9 +8,10 @@ package ru.job4j.array;
 
 public class SortMassive {
     /**
-     *  метод проверяет отсортирован ли масив.
+     * метод проверяет отсортирован ли масив.
+     *
      * @param array массив
-     * @return  ответ.
+     * @return ответ.
      */
     public boolean isSort(int[] array) {
         boolean result = true;

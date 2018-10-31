@@ -1,6 +1,7 @@
 package ru.job4j.loop;
 
 import java.util.function.BiPredicate;
+
 /**
  * @author Ilya Astafiev (mailto:izzy.nety@gmail.com)
  * @version $Id$
@@ -9,7 +10,8 @@ import java.util.function.BiPredicate;
 public class Paint {
 
     /**
-     *  Правая сторона пирамиды
+     * Правая сторона пирамиды
+     *
      * @param height
      * @return
      */
@@ -22,7 +24,8 @@ public class Paint {
     }
 
     /**
-     *  Левая сторона пирамиды
+     * Левая сторона пирамиды
+     *
      * @param height
      * @return
      */

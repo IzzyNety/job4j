@@ -22,6 +22,6 @@ public class ArrayPlusArray {
             }
         }
 
-                return result;
+        return result;
     }
 }

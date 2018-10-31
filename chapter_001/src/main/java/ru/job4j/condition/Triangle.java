@@ -11,18 +11,18 @@ public class Triangle {
         this.c = c;
     }
 
-/**
- * Метод вычисления полупериметра по длинам сторон.
- *
- * Формула.
- *
- * (ab + ac + bc)/2
- *
- * @param ab расстояние между точками a b
- * @param ac расстояние между точками a c
- * @param bc расстояние между точками b c
- * @return Периметр
-  */
+    /**
+     * Метод вычисления полупериметра по длинам сторон.
+     * <p>
+     * Формула.
+     * <p>
+     * (ab + ac + bc)/2
+     *
+     * @param ab расстояние между точками a b
+     * @param ac расстояние между точками a c
+     * @param bc расстояние между точками b c
+     * @return Периметр
+     */
 
     public double period(double ab, double ac, double bc) {
         return (ab + ac + bc) / 2;
@@ -33,17 +33,17 @@ public class Triangle {
      *
      * @return Вернуть площадь, если треугольник сеществует или -1, если треугольника нет.
      */
-   public double area() {
-       double rsl = -1;
-       double ab = this.a.distanceTo(this.b);
-       double ac = this.a.distanceTo(this.c);
-       double bc = this.b.distanceTo(this.c);
-       double p = this.period(ab, ac, bc);
-       if (this.exist(ab, ac, bc)) {
-           return  Math.sqrt(p * (p - ab) * (p - ac) * (p - bc));
-       }
-       return rsl;
-   }
+    public double area() {
+        double rsl = -1;
+        double ab = this.a.distanceTo(this.b);
+        double ac = this.a.distanceTo(this.c);
+        double bc = this.b.distanceTo(this.c);
+        double p = this.period(ab, ac, bc);
+        if (this.exist(ab, ac, bc)) {
+            return Math.sqrt(p * (p - ab) * (p - ac) * (p - bc));
+        }
+        return rsl;
+    }
 
     /**
      * Метод проверяет можно ли построить треугольник с такими длинными сторонами.

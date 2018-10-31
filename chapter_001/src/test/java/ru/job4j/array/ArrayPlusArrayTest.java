@@ -15,9 +15,10 @@ public class ArrayPlusArrayTest {
         int[] input = new int[]{1, 2, 3};
         int[] input2 = new int[]{4, 5, 6};
         int[] result = arrayPlusArray.plusArray(input, input2);
-        int[] expect = new  int[]{1, 2, 3, 4, 5, 6};
+        int[] expect = new int[]{1, 2, 3, 4, 5, 6};
         assertThat(result, is(expect));
     }
+
     @Test
     public void whenOneArrayHaveThreeAndPlusArrayHaveFive() {
         ArrayPlusArray arrayPlusArray = new ArrayPlusArray();
@@ -27,6 +28,7 @@ public class ArrayPlusArrayTest {
         int[] expect = new int[]{1, 2, 3, 4, 5, 6, 7, 11};
         assertThat(result, is(expect));
     }
+
     @Test
     public void whenOneArrayHaveFiveAndPlusArrayHavethree() {
         ArrayPlusArray arrayPlusArray = new ArrayPlusArray();
@@ -36,6 +38,7 @@ public class ArrayPlusArrayTest {
         int[] expect = new int[]{1, 2, 3, 4, 5, 6, 7, 11};
         assertThat(result, is(expect));
     }
+
     @Test
     public void whenOneArrayHaveNullAndPlusArrayHaveThree() {
         ArrayPlusArray arrayPlusArray = new ArrayPlusArray();
@@ -45,6 +48,7 @@ public class ArrayPlusArrayTest {
         int[] expect = new int[]{1, 3, 5};
         assertThat(result, is(expect));
     }
+
     @Test
     public void whenArrayHaveThreeAndPlusArrayHaveNull() {
         ArrayPlusArray arrayPlusArray = new ArrayPlusArray();
@@ -54,6 +58,7 @@ public class ArrayPlusArrayTest {
         int[] expect = new int[]{1, 3, 5};
         assertThat(result, is(expect));
     }
+
     @Test
     public void whenArrayHaveNullAndPlusArrayHaveNull() {
         ArrayPlusArray arrayPlusArray = new ArrayPlusArray();

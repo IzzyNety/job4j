@@ -6,6 +6,7 @@ package ru.job4j.loop;
 public class Factorial {
     /**
      * Факториал числа.
+     *
      * @param n число.
      * @return расчет факториала.
      */

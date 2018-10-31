@@ -8,6 +8,7 @@ package ru.job4j.max;
 public class Max {
     /**
      * Максимум из двух чисел.
+     *
      * @param first, second Числа для сравнения.
      * @return Наибольшее число
      */
@@ -17,9 +18,10 @@ public class Max {
 
     /**
      * максимум из трех чисел.
-     * @param first - первое число.
+     *
+     * @param first  - первое число.
      * @param second - второе число.
-     * @param third - третье число.
+     * @param third  - третье число.
      * @return возвращает параметр.
      */
     public int max(int first, int second, int third) {

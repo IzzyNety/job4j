@@ -4,7 +4,6 @@ import ru.job4j.puzzle.firuges.Cell;
 import ru.job4j.puzzle.firuges.Figure;
 
 /**
- *
  * @author Ilia Astafiev (izzy.nety@gmail.com)
  * @version $Id$
  * @since 0.1
@@ -37,7 +36,7 @@ public class Logic {
         return rst;
     }
 
-    public boolean isFree(Cell ... cells) {
+    public boolean isFree(Cell... cells) {
         boolean result = cells.length > 0;
         for (Cell cell : cells) {
             if (this.findBy(cell) != -1) {
@@ -80,20 +79,20 @@ public class Logic {
             if (result) {
                 break;
             }
-                result = true;
+            result = true;
 
-                for (int j = 0; j < table.length; j++) {
-                    if (table[j][i] != 1) {
+            for (int j = 0; j < table.length; j++) {
+                if (table[j][i] != 1) {
                     result = false;
                     break;
-                    }
                 }
-                if (result) {
-                    break;
-                }
+            }
+            if (result) {
+                break;
+            }
 
         }
-     return result;
+        return result;
     }
 
     public int[][] convert() {

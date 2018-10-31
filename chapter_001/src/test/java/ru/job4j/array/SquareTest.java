@@ -17,6 +17,7 @@ public class SquareTest {
         int[] expect = new int[]{1, 4, 9};
         assertThat(rst, is(expect));
     }
+
     /**
      * тестирование четырех чисел.
      */
