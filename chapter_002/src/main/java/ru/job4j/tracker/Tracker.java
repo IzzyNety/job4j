@@ -46,14 +46,14 @@ public class Tracker {
      */
     public boolean delete(String id) {
         boolean result = false;
-        int i = 0;
-        for (Item item : items) {
-            if (item.getId().equals(id)) {
-                System.arraycopy(this.items, i + 1, this.items, i, items.length - 1 - i);
+        for (int i=0; i <position; i++) {
+            if (this.items != null && this.items[i].getId().equals(id)) {
+                System.arraycopy(items, i + 1, items, i, items.length - (i + 1));
+                this.position = this.position - 1;
                 result = true;
                 break;
             }
-            i--;
+
         }
         return result;
     }
@@ -78,15 +78,13 @@ public class Tracker {
     protected Item[] findByName(String key) {
         int i = 0;
         Item[] result = new Item[position];
-        int match = position + 1;
         for (Item item : items) {
             if (item != null && item.getName().equals(key)) {
                 result[i] = item;
-                match--;
                 i++;
             }
         }
-        return Arrays.copyOf(result, match);
+        return Arrays.copyOf(result, i);
     }
 
     /**
