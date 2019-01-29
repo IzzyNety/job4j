@@ -53,7 +53,7 @@ public class Tracker {
                 result = true;
                 break;
             }
-            i++;
+            i--;
         }
         return result;
     }
