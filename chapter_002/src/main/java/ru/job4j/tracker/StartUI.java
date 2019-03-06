@@ -95,6 +95,8 @@ public class StartUI {
     private void findAll() {
         System.out.println("------------ Вывод всех заявок --------------");
         this.tracker.findAll();
+        System.out.println(this.tracker.findAll());
+
     }
 
     /**
@@ -103,9 +105,8 @@ public class StartUI {
     private void edit() {
         System.out.println("------------ Редактирование заявки --------------");
         String id = this.input.ask("Введите id заявки : ");
-
-        this.tracker.replace();
-        System.out.println("------------ Новая заявка с getId : " + findId(id) + "-----------");
+        this.tracker.replace(this.tracker.findById(id));
+        System.out.println("------------ Редактирование успешно -----------");
     }
 
     /**
@@ -115,6 +116,7 @@ public class StartUI {
         System.out.println("------------ Удаление заявки --------------");
         String id = this.input.ask("Введите id заявки : ");
         this.tracker.delete(this.tracker.findById(id));
+        System.out.println("---------------Заявка Удалена------------");
     }
 
     /**
@@ -124,6 +126,7 @@ public class StartUI {
         System.out.println("------------ Поиск по ID --------------");
         String id = this.input.ask("Введите id заявки : ");
         this.tracker.findById(this.tracker.findById(id));
+        System.out.println("-----------Заявка с ID : " + this.tracker.findById(id));
     }
 
     /**
@@ -132,14 +135,12 @@ public class StartUI {
     private void findName() {
         System.out.println("------------ Поиск по имени --------------");
         String name = this.input.ask("Введите имя заявки : ");
-        this.tracker.findByName();
+        this.tracker.findByName(this.tracker.findByName(name));
+        System.out.println("----- Заявка с именем : " + this.tracker.findByName(name));
     }
     private void showMenu() {
         System.out.println("Меню.");
 
-        int selection = 0;
-
-        do {
             System.out.println("[0] Add new Item");
             System.out.println("[1] Show all items");
             System.out.println("[2] Edit item");
@@ -147,38 +148,12 @@ public class StartUI {
             System.out.println("[4] Find item by Id");
             System.out.println("[5] Find items by name");
             System.out.println("[6] Exit Program");
-
-            System.out.println("Insert selection: ");
-
-
-            switch (selection) {
-                case 0:
-                    createItem();
-                    break;
-                case 1:
-                    findAll();
-                    break;
-                case 2:
-                    edit();
-                    break;
-                case 3:
-                    delete();
-                    break;
-                case 4:
-                    findId();
-                    break;
-                case 5:
-                    findName();
-                    break;
-                case 6:
-                    System.out.println("------------");
-                    break;
-                default:
-                    System.out.println("The selection is invalid.");
-                    break;
-            }
-        }
-        while (selection != 6) ;
-
+    }
+    /**
+     * запуск меню
+     * @param args
+     */
+    public static void main(String[] args) {
+        new StartUI(new ConsoleInput(), new Tracker()).init();
     }
 }
