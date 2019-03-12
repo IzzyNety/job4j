@@ -85,7 +85,8 @@ public class StartUI {
         System.out.println("------------ Добавление новой заявки --------------");
         String name = this.input.ask("Введите имя заявки : ");
         String desc = this.input.ask("Введите описание заявки : ");
-        Item item = new Item(name, desc, 111);
+        long timeNow = System.currentTimeMillis();
+        Item item = new Item(name, desc, timeNow);
         this.tracker.add(item);
         System.out.println("------------ Новая заявка с getId : " + item.getId() + "-----------");
     }
@@ -154,11 +155,9 @@ public class StartUI {
     private void findName() {
         System.out.println("------------ Поиск по имени --------------");
         String name = this.input.ask("Введите имя заявки : ");
-        Item[] item = this.tracker.findByName(name);
-        if (this.tracker.findByName(name) != null) {
-            System.out.println("Заявка по name найдена");
-        } else {
-            System.out.println("Заявка по name не найдена");
+        Item[] items = this.tracker.findByName(name);
+        for (Item item : items) {
+            System.out.println(item.getName());
         }
     }
 
