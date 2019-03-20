@@ -22,7 +22,7 @@ public class StartUITest {
     @Test
     public void whenUpdateThenTrackerHasUpdateValue() {
         Tracker tracker = new Tracker();
-        Item item = tracker.add(new Item("test name", "desc",222));
+        Item item = tracker.add(new Item("test name", "desc", 222));
         Input input = new StubInput(new String[]{"2", item.getId(), "test replace", "заменили заявку", "6"});
         new StartUI(input, tracker).init();
         assertThat(tracker.findById(item.getId()).getName(), is("test replace"));
@@ -34,7 +34,7 @@ public class StartUITest {
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("test name", "desc", 333));
-        Input input = new StubInput(new String[]{"3", item.getId(),"test delete", "6"});
+        Input input = new StubInput(new String[]{"3", item.getId(), "test delete", "6"});
         new StartUI(input, tracker).init();
         assertThat(tracker.findById(item.getId()), is("test delete"));
     }

@@ -24,17 +24,18 @@ public class PaintTest {
                 new String(out.toByteArray()),
                 is(
                         new StringBuilder()
-                            .append("++++")
-                            .append("+  +")
-                            .append("+  +")
-                            .append("++++")
-                            .append(System.lineSeparator())
-                            .toString()
+                                .append("++++")
+                                .append("+  +")
+                                .append("+  +")
+                                .append("++++")
+                                .append(System.lineSeparator())
+                                .toString()
                 )
         );
         //Возвращаем обратно тсандартный вывод на консоль.
         System.setOut(stdout);
     }
+
     @Test
     public void whenDrawTriangle() {
         PrintStream stdout = System.out;
@@ -45,12 +46,12 @@ public class PaintTest {
                 new String(out.toByteArray()),
                 is(
                         new StringBuilder()
-                            .append("  ^  ")
-                            .append(" ^ ^ ")
-                            .append("^   ^")
-                            .append("^^^^^")
-                            .append(System.lineSeparator())
-                            .toString()
+                                .append("  ^  ")
+                                .append(" ^ ^ ")
+                                .append("^   ^")
+                                .append("^^^^^")
+                                .append(System.lineSeparator())
+                                .toString()
                 )
         );
         System.setOut(stdout);

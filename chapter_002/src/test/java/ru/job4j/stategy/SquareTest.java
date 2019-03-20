@@ -11,13 +11,13 @@ public class SquareTest {
         Square square = new Square();
         assertThat(
                 square.draw(),
-                is (
+                is(
                         new StringBuilder()
-                            .append("++++")
-                            .append("+  +")
-                            .append("+  +")
-                            .append("++++")
-                            .toString()
+                                .append("++++")
+                                .append("+  +")
+                                .append("+  +")
+                                .append("++++")
+                                .toString()
                 )
         );
     }

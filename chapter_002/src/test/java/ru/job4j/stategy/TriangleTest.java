@@ -11,7 +11,7 @@ public class TriangleTest {
         Triangle triangle = new Triangle();
         assertThat(
                 triangle.draw(),
-                is (
+                is(
                         new StringBuilder()
                                 .append("  ^  ")
                                 .append(" ^ ^ ")
