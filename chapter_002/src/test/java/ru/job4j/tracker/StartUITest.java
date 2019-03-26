@@ -1,6 +1,5 @@
 package ru.job4j.tracker;
 
-import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +9,7 @@ import java.io.PrintStream;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static ru.job4j.tracker.StartUI.showMenu;
 
 public class StartUITest {
 
@@ -78,6 +78,7 @@ public class StartUITest {
                 new String(out.toByteArray()),
                 is(
                         new StringBuilder()
+                                .append(showMenu())
                                 .append("------------ Вывод всех заявок --------------")
                                 .append("0." + item1.toString())
                                 .append("1." + item2.toString())
@@ -103,6 +104,7 @@ public class StartUITest {
                 new String(out.toByteArray()),
                 is(
                         new StringBuilder()
+                                .append(showMenu())
                                 .append("------------ Поиск по ID --------------")
                                 .append(item2.toString())
                                 .append(System.lineSeparator())
@@ -127,6 +129,7 @@ public class StartUITest {
                 new String(out.toByteArray()),
                 is(
                         new StringBuilder()
+                                .append(showMenu())
                                 .append("------------ Поиск по имени --------------")
                                 .append(item2.toString())
                                 .append(item4.toString())
