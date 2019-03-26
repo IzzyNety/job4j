@@ -161,16 +161,24 @@ public class StartUI {
         }
     }
 
-    private void showMenu() {
-        System.out.println("Меню.");
-
-        System.out.println("[0] Add new Item");
-        System.out.println("[1] Show all items");
-        System.out.println("[2] Edit item");
-        System.out.println("[3] Delete item");
-        System.out.println("[4] Find item by Id");
-        System.out.println("[5] Find items by name");
-        System.out.println("[6] Exit Program");
+    public static StringBuilder showMenu() {
+        return new StringBuilder()
+                .append(System.lineSeparator())
+                .append("Меню.")
+                .append(System.lineSeparator())
+                .append("0. Add new Item.")
+                .append(System.lineSeparator())
+                .append("1. Show all items.")
+                .append(System.lineSeparator())
+                .append("2. Edit item.")
+                .append(System.lineSeparator())
+                .append("3. Delete item.")
+                .append(System.lineSeparator())
+                .append("4. Find item by id.")
+                .append(System.lineSeparator())
+                .append("5. Find items by name.")
+                .append(System.lineSeparator())
+                .append("6. Exit program.");
     }
 
     public static void main(String[] args) {
