@@ -57,10 +57,27 @@ public class StartUITest {
     @Test
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
-        Item item = tracker.add(new Item("test name", "desc", 333));
-        Input input = new StubInput(new String[]{"3", item.getId(), "test delete", "6"});
+        Item item1 = tracker.add(new Item("test name1", "desc1", 123L));
+        Item item2 = tracker.add(new Item("test name2", "desc2", 1234L));
+        Item item3 = tracker.add(new Item("test name3", "desc3", 1234L));
+        Input input = new StubInput(new String[]{"3", item2.getId(), "test delete", "6"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.findById(item.getId()), is("test delete"));
+        assertThat(new String(out.toByteArray()),
+                is(
+                        new StringBuilder()
+                                .append(showMenu())
+                                .append(System.lineSeparator())
+                                .append("------------ Удаление заявки --------------")
+                                .append(System.lineSeparator())
+                                .append("0." + item1.getName() + item1.getId())
+                                .append(System.lineSeparator())
+                                .append("1." + item1.getName() + item2.getId() + " удаленная заявка ")
+                                .append(System.lineSeparator())
+                                .append("2." + item1.getName() + item3.getId())
+                                .append(System.lineSeparator())
+                                .toString()
+                )
+        );
     }
 
     /**
@@ -79,10 +96,14 @@ public class StartUITest {
                 is(
                         new StringBuilder()
                                 .append(showMenu())
+                                .append(System.lineSeparator())
                                 .append("------------ Вывод всех заявок --------------")
-                                .append("0." + item1.toString())
-                                .append("1." + item2.toString())
-                                .append("2." + item3.toString())
+                                .append(System.lineSeparator())
+                                .append("0." + item1.getName() + item1.getDescription() + item1.getId())
+                                .append(System.lineSeparator())
+                                .append("1." + item2.getName() + item2.getDescription() + item2.getId())
+                                .append(System.lineSeparator())
+                                .append("2." + item3.getName() + item3.getDescription() + item3.getId())
                                 .append(System.lineSeparator())
                                 .toString()
                 )
@@ -95,9 +116,9 @@ public class StartUITest {
     @Test
     public void whenFindById() {
         Tracker tracker = new Tracker();
-        Item item1 = tracker.add(new Item("test name1", "desc1", 123L));
-        Item item2 = tracker.add(new Item("test name2", "desc2", 1234L));
-        Item item3 = tracker.add(new Item("test name3", "desc3", 1234L));
+        Item item1 = tracker.add(new Item("test name1", "desc1", 123));
+        Item item2 = tracker.add(new Item("test name2", "desc2", 1234));
+        Item item3 = tracker.add(new Item("test name3", "desc3", 12345));
         Input input = new StubInput(new String[]{"4", item2.getId(), "6"});
         new StartUI(input, tracker).init();
         assertThat(
@@ -105,8 +126,10 @@ public class StartUITest {
                 is(
                         new StringBuilder()
                                 .append(showMenu())
+                                .append(System.lineSeparator())
                                 .append("------------ Поиск по ID --------------")
-                                .append(item2.toString())
+                                .append(System.lineSeparator())
+                                .append(item2.getId())
                                 .append(System.lineSeparator())
                                 .toString()
                 )
@@ -122,17 +145,17 @@ public class StartUITest {
         Item item1 = tracker.add(new Item("test name1", "desc1", 123L));
         Item item2 = tracker.add(new Item("test name2", "desc2", 1234L));
         Item item3 = tracker.add(new Item("test name3", "desc3", 1234L));
-        Item item4 = tracker.add(new Item("test name2", "desc4", 12344L));
-        Input input = new StubInput(new String[]{"5", "test name2", "6"});
+        Input input = new StubInput(new String[]{"5", item2.getName(), "6"});
         new StartUI(input, tracker).init();
         assertThat(
                 new String(out.toByteArray()),
                 is(
                         new StringBuilder()
                                 .append(showMenu())
+                                .append(System.lineSeparator())
                                 .append("------------ Поиск по имени --------------")
-                                .append(item2.toString())
-                                .append(item4.toString())
+                                .append(System.lineSeparator())
+                                .append(item2.getName())
                                 .append(System.lineSeparator())
                                 .toString()
                 )

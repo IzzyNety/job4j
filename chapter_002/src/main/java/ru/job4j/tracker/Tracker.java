@@ -30,15 +30,16 @@ public class Tracker {
      * Метод редактирования заявок.
      */
     public boolean replace(String id, Item item) {
-        boolean result = false;
-        for (int i = 0; i < position; i++) {
-            if (item.getId().equals(id)) {
-                this.items[i] = item;
-                result = true;
-                break;
+        for (int i = 0; i < this.position; i++) {
+            if (items[i].getId().equals(id)) {
+                String oldId = items[i].getId();
+                item.setId(oldId);
+                items[i] = item;
+
+                return true;
             }
         }
-        return result;
+        return false;
     }
 
     /**
