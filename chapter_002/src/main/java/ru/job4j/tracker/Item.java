@@ -6,6 +6,16 @@ public class Item {
     private String description;
     private long create;
 
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", create=" + create +
+                '}';
+    }
+
     public Item(String name, String description, long create) {
         this.name = name;
         this.description = description;
@@ -31,4 +41,5 @@ public class Item {
     public void setId(String id) {
         this.id = id;
     }
+
 }
