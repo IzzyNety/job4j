@@ -58,7 +58,7 @@ public class StartUI {
     public void init() {
         boolean exit = false;
         while (!exit) {
-            System.out.println(showMenu()) ;
+            System.out.println(showMenu());
             String answer = this.input.ask("Введите пункт меню : ");
             if (ADD.equals(answer)) {
                 this.createItem();
