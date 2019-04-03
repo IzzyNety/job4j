@@ -60,9 +60,10 @@ public class StartUITest {
         Item item1 = tracker.add(new Item("test name1", "desc1", 123L));
         Item item2 = tracker.add(new Item("test name2", "desc2", 1234L));
         Item item3 = tracker.add(new Item("test name3", "desc3", 1234L));
-        Input input = new StubInput(new String[]{"3", item2.getId(), "test delete", "6"});
+        Input input = new StubInput(new String[]{"3", item2.getId(), "6"});
         new StartUI(input, tracker).init();
-        assertThat(new String(out.toByteArray()),
+        assertThat(
+                new String(out.toByteArray()),
                 is(
                         new StringBuilder()
                                 .append(showMenu())
@@ -70,10 +71,6 @@ public class StartUITest {
                                 .append("------------ Удаление заявки --------------")
                                 .append(System.lineSeparator())
                                 .append("Заявка была удалена")
-                                .append(System.lineSeparator())
-                                .append(showMenu())
-                                .append(System.lineSeparator())
-                                .append(showMenu())
                                 .append(System.lineSeparator())
                                 .toString()
                 )
@@ -105,8 +102,6 @@ public class StartUITest {
                                 .append(System.lineSeparator())
                                 .append(item3.toString())
                                 .append(System.lineSeparator())
-                                .append(showMenu())
-                                .append(System.lineSeparator())
                                 .toString()
                 )
         );
@@ -133,8 +128,6 @@ public class StartUITest {
                                 .append(System.lineSeparator())
                                 .append("Заявка с id - " + item2.getId() + " : " + item2.getId())
                                 .append(System.lineSeparator())
-                                .append(showMenu())
-                                .append(System.lineSeparator())
                                 .toString()
                 )
         );
@@ -160,8 +153,6 @@ public class StartUITest {
                                 .append("------------ Поиск по имени --------------")
                                 .append(System.lineSeparator())
                                 .append(item2.getName())
-                                .append(System.lineSeparator())
-                                .append(showMenu())
                                 .append(System.lineSeparator())
                                 .toString()
                 )
