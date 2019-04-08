@@ -22,7 +22,7 @@ public class MenuTracker {
     /**
      * Конструктор
      *
-     * @param input обьект типа Input
+     * @param input   обьект типа Input
      * @param tracker обьект типа Tracker
      */
     public MenuTracker(Input input, Tracker tracker) {
@@ -42,7 +42,7 @@ public class MenuTracker {
     /**
      * Метод заполняет массив.
      */
-    public  void fillActions() {
+    public void fillActions() {
         this.actions.add(new AddItem());
         this.actions.add(new FindAllItem());
         this.actions.add(new UpdateItem());

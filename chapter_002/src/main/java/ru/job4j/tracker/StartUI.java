@@ -1,10 +1,14 @@
 package ru.job4j.tracker;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * этот класс должен запускать программу и обеспечивать полноценную работу всего приложения.
  */
 public class StartUI {
 
+    private int[] ranges = new int[]{0, 1, 2, 3, 4, 5};
     private final Input input;
     /**
      * Хранилище заявок.
@@ -18,6 +22,7 @@ public class StartUI {
      * @param tracker хранилище заявок.
      */
     public StartUI(Input input, Tracker tracker) {
+
         this.input = input;
         this.tracker = tracker;
     }
@@ -26,12 +31,15 @@ public class StartUI {
      * Основной цикл программы.
      */
     public void init() {
-       MenuTracker menu = new MenuTracker(this.input, this.tracker);
-       menu.fillActions();
-       do {
-           menu.show();
-           menu.select(Integer.valueOf(input.ask("select: ")));
-       } while (!"6".equals(this.input.ask("Exit?(y): ")));
+
+        MenuTracker menu = new MenuTracker(this.input, this.tracker);
+
+        menu.fillActions();
+
+        do {
+            menu.show();
+            menu.select(input.ask("select:", ranges));
+        } while (!"6".equals(this.input.ask("Exit?(y): ")));
     }
 
     public static StringBuilder showMenu() {
@@ -53,6 +61,6 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
-        new StartUI(new ConsoleInput(), new Tracker()).init();
+        new StartUI(new ValidateInput(), new Tracker()).init();
     }
 }
