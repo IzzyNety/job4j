@@ -45,19 +45,19 @@ public class StartUI {
     public static StringBuilder showMenu() {
         return new StringBuilder()
 
-                .append("0. Add new Item.")
+                .append("0 : Add new Item.")
                 .append(System.lineSeparator())
-                .append("1. Find all Item.")
+                .append("1 : Find all Item.")
                 .append(System.lineSeparator())
-                .append("2. Update Item.")
+                .append("2 : Update Item.")
                 .append(System.lineSeparator())
-                .append("3. Delete Item.")
+                .append("3 : Delete Item.")
                 .append(System.lineSeparator())
-                .append("4. Find by id Item.")
+                .append("4 : Find by id Item.")
                 .append(System.lineSeparator())
-                .append("5. Find by name Item.")
+                .append("5 : Find by name Item.")
                 .append(System.lineSeparator())
-                .append("6. Exit program.");
+                .append("6 : Exit program.");
     }
 
     public static void main(String[] args) {

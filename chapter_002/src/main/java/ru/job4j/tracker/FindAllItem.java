@@ -1,12 +1,14 @@
 package ru.job4j.tracker;
 
-public class FindAllItem implements UserAction {
-
-
-    @Override
-    public int key() {
-        return 1;
+public class FindAllItem extends BaseAction {
+    public FindAllItem(int key, String name) {
+        super(key, name);
     }
+
+//    @Override
+//    public int key() {
+//        return 1;
+//    }
 
     @Override
     public void execute(Input input, Tracker tracker) {
@@ -21,8 +23,8 @@ public class FindAllItem implements UserAction {
         }
     }
 
-    @Override
-    public String info() {
-        return "1. Find all Item.";
-    }
+    //   @Override
+//    public String info() {
+    //       return "1. Find all Item.";
+//    }
 }
