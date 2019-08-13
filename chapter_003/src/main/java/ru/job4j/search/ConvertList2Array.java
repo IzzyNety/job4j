@@ -1,8 +1,10 @@
 package ru.job4j.search;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ConvertList2Array {
+
     public int[][] toArray(List<Integer> list, int rows) {
         int cells = rows;
 
@@ -21,5 +23,15 @@ public class ConvertList2Array {
             }
         }
         return array;
+    }
+
+    public List<Integer> convert(List<int[]> list) {
+        List<Integer> result = new ArrayList<Integer>();
+        for (int[] element : list) {
+            for (int number : element) {
+                result.add(number);
+            }
+        }
+        return result;
     }
 }
