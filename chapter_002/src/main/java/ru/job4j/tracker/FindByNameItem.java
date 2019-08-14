@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.util.List;
+
 public class FindByNameItem extends BaseAction {
     public FindByNameItem(int key, String name) {
         super(key, name);
@@ -13,7 +15,7 @@ public class FindByNameItem extends BaseAction {
     public void execute(Input input, Tracker tracker) {
         System.out.println("------------ Поиск по имени --------------");
         String name = input.ask("Введите имя заявки : ");
-        Item[] items = tracker.findByName(name);
+        List<Item> items = tracker.findByName(name);
         for (Item item : items) {
             System.out.println(item.getName());
         }

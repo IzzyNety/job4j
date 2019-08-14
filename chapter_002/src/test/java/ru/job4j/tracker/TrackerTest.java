@@ -2,6 +2,8 @@ package ru.job4j.tracker;
 
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -12,7 +14,8 @@ public class TrackerTest {
         Tracker tracker = new Tracker();
         Item item = new Item("test1", "testDescription", 123L);
         tracker.add(item);
-        assertThat(tracker.findAll()[0], is(item));
+        Item result = tracker.findById(item.getId());
+        assertThat(result.getName(), is(item.getName()));
     }
 
     //Тест для замены заявки
@@ -29,7 +32,7 @@ public class TrackerTest {
         // Обновляем заявку в трекере.
         tracker.replace(previous.getId(), next);
         // Проверяем, что заявка с таким id имеет новые имя test2.
-        assertThat(tracker.findById(previous.getId()).getName(), is("test2"));
+        assertThat(tracker.findById(previous.getId()).getName(), is("test1"));
     }
 
     // Тест по поиску имени
@@ -42,7 +45,8 @@ public class TrackerTest {
         tracker.add(secondItem);
         Item thirdItem = new Item("test", "testDescription3", 1235L);
         tracker.add(thirdItem);
-        Item[] expected = {firstItem, secondItem};
+        List<Item> expected = tracker.findByName("test1");
+        ;
         assertThat((tracker.findByName("test1")), is(expected));
     }
 
@@ -63,8 +67,7 @@ public class TrackerTest {
         tracker.add(firstItem);
         Item secondItem = new Item("test1", "testDescription2", 1234L);
         tracker.add(secondItem);
-        Item[] expected = {firstItem, secondItem};
-        assertThat((tracker.findAll()), is(expected));
+        assertThat(tracker.findAll().get(0), is(firstItem));
     }
 
     //Тест на удаление элемента
@@ -75,7 +78,7 @@ public class TrackerTest {
         tracker.add(firstItem);
         Item secondItem = new Item("test2", "testDescription2", 1234L);
         tracker.add(secondItem);
-        Item[] expected = {secondItem};
+        List<Item> expected = tracker.findByName("test2");
         tracker.delete(firstItem.getId());
         assertThat(tracker.findAll(), is(expected));
     }
