@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.util.List;
+
 public class FindAllItem extends BaseAction {
     public FindAllItem(int key, String name) {
         super(key, name);
@@ -13,13 +15,11 @@ public class FindAllItem extends BaseAction {
     @Override
     public void execute(Input input, Tracker tracker) {
         System.out.println("------------ Вывод всех заявок --------------");
-        final Item[] all = tracker.findAll();
-        if (all.length > 0) {
+        List<Item> all = tracker.findAll();
+        {
             for (Item item : all) {
                 System.out.println(item);
             }
-        } else {
-            System.out.println("Трекер пуст");
         }
     }
 
