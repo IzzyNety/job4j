@@ -34,11 +34,11 @@ public class Tracker {
      */
     public boolean replace(String id, Item item) {
         for (Item each : items) {
-            if (each.getId().equals(id)) {
+
                 items.set(items.indexOf(each), item);
 
                 return true;
-            }
+
         }
         return false;
     }
@@ -53,11 +53,11 @@ public class Tracker {
         //           System.arraycopy(items, i + 1, items, i, items.length - (i + 1));
         //           this.position = this.position - 1;
         for (Item item : items) {
-            if (item.getId().equals(id)) {
+
                 items.remove(item);
                 result = true;
                 break;
-            }
+
 
         }
         return result;
