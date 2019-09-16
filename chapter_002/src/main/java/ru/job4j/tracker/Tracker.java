@@ -11,7 +11,7 @@ public class Tracker {
     /**
      * Указатель ячейки для новой заявки.
      */
-    //   private int position = 0;
+    private int position = 0;
 
     private final List<Item> items = new ArrayList<>(100);
 
@@ -33,14 +33,16 @@ public class Tracker {
      * Метод редактирования заявок.
      */
     public boolean replace(String id, Item item) {
-        for (Item each : items) {
-
-                items.set(items.indexOf(each), item);
-
-                return true;
-
+        boolean result = false;
+        for (int i = 0; i < this.position; i++) {
+            if (id.equals(this.items.get(i).getId())) {
+                this.items.set(i, item);
+                item.setId(id);
+                result = true;
+                break;
+            }
         }
-        return false;
+        return result;
     }
 
     /**
@@ -52,12 +54,12 @@ public class Tracker {
         //     if (this.items != null && this.items[i].getId().equals(id)) {
         //           System.arraycopy(items, i + 1, items, i, items.length - (i + 1));
         //           this.position = this.position - 1;
-        for (Item item : items) {
-
-                items.remove(item);
+        for (int i = 0; i < items.size(); i++) {
+            if (id.equals(this.items.get(i).getId())) {
+                this.items.remove(this.items.get(i));
                 result = true;
                 break;
-
+            }
 
         }
         return result;
