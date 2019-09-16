@@ -56,7 +56,7 @@ public class Tracker {
         //           this.position = this.position - 1;
         for (int i = 0; i < items.size(); i++) {
             if (id.equals(this.items.get(i).getId())) {
-                this.items.remove(this.items.get(i));
+                items.remove(i);
                 result = true;
                 break;
             }
