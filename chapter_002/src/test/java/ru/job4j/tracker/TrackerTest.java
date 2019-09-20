@@ -46,7 +46,7 @@ public class TrackerTest {
         Item thirdItem = new Item("test", "testDescription3", 1235L);
         tracker.add(thirdItem);
         List<Item> expected = tracker.findByName("test1");
-        ;
+
         assertThat((tracker.findByName("test1")), is(expected));
     }
 

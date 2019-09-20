@@ -16,11 +16,11 @@ public class FindAllItem extends BaseAction {
     public void execute(Input input, Tracker tracker) {
         System.out.println("------------ Вывод всех заявок --------------");
         List<Item> all = tracker.findAll();
-        {
+
             for (Item item : all) {
                 System.out.println(item);
             }
-        }
+
     }
 
     //   @Override
