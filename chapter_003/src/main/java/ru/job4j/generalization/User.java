@@ -1,14 +1,18 @@
 package ru.job4j.generalization;
 
-public class User {
+import static java.lang.Integer.compare;
+
+public class User implements Comparable<User> {
     int id;
-    String name;
+    public String name;
+    public int age;
     String city;
 
-    public User(int id, String name, String city) {
+    public User(int id, String name, String city, int age) {
         this.id = id;
         this.name = name;
         this.city = city;
+        this.age = age;
     }
 
     public int getId() {
@@ -34,7 +38,21 @@ public class User {
     public void setCity(String city) {
         this.city = city;
     }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public String toString() {
         return id + ", " + name + ", " + city;
+    }
+
+    @Override
+    public int compareTo(User o) {
+        return compare(this.getAge(), o.getAge());
     }
 }
